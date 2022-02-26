@@ -1,7 +1,9 @@
 from flask import Flask, request, jsonify
 from transformers import pipeline
+from flask_cors import CORS
 
 app = Flask(__name__)
+CORS(app)
 emotion = pipeline('sentiment-analysis', model='arpanghoshal/EmoRoBERTa')
 
 
